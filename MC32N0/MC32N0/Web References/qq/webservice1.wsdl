@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://192.168.2.200/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://192.168.2.200/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://192.168.2.200/">
+      <s:element name="getBillInfoByBillNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BillNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBillInfoByBillNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBillInfoByBillNoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActQtyByBillNoEntryID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BillNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActQtyByBillNoEntryIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActQtyByBillNoEntryIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertQRCode2T_QRCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QRCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertQRCode2T_QRCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertQRCode2T_QRCodeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateICStockByActQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="billNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntryID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SuccessCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateICStockByActQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateICStockByActQtyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getBillInfoByBillNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getBillInfoByBillNo" />
+  </wsdl:message>
+  <wsdl:message name="getBillInfoByBillNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getBillInfoByBillNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActQtyByBillNoEntryIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getActQtyByBillNoEntryID" />
+  </wsdl:message>
+  <wsdl:message name="getActQtyByBillNoEntryIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getActQtyByBillNoEntryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertQRCode2T_QRCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:insertQRCode2T_QRCode" />
+  </wsdl:message>
+  <wsdl:message name="insertQRCode2T_QRCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:insertQRCode2T_QRCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateICStockByActQtySoapIn">
+    <wsdl:part name="parameters" element="tns:updateICStockByActQty" />
+  </wsdl:message>
+  <wsdl:message name="updateICStockByActQtySoapOut">
+    <wsdl:part name="parameters" element="tns:updateICStockByActQtyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="getBillInfoByBillNo">
+      <wsdl:input message="tns:getBillInfoByBillNoSoapIn" />
+      <wsdl:output message="tns:getBillInfoByBillNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActQtyByBillNoEntryID">
+      <wsdl:input message="tns:getActQtyByBillNoEntryIDSoapIn" />
+      <wsdl:output message="tns:getActQtyByBillNoEntryIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertQRCode2T_QRCode">
+      <wsdl:input message="tns:insertQRCode2T_QRCodeSoapIn" />
+      <wsdl:output message="tns:insertQRCode2T_QRCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateICStockByActQty">
+      <wsdl:input message="tns:updateICStockByActQtySoapIn" />
+      <wsdl:output message="tns:updateICStockByActQtySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBillInfoByBillNo">
+      <soap:operation soapAction="http://192.168.2.200/getBillInfoByBillNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActQtyByBillNoEntryID">
+      <soap:operation soapAction="http://192.168.2.200/getActQtyByBillNoEntryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertQRCode2T_QRCode">
+      <soap:operation soapAction="http://192.168.2.200/insertQRCode2T_QRCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateICStockByActQty">
+      <soap:operation soapAction="http://192.168.2.200/updateICStockByActQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBillInfoByBillNo">
+      <soap12:operation soapAction="http://192.168.2.200/getBillInfoByBillNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActQtyByBillNoEntryID">
+      <soap12:operation soapAction="http://192.168.2.200/getActQtyByBillNoEntryID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertQRCode2T_QRCode">
+      <soap12:operation soapAction="http://192.168.2.200/insertQRCode2T_QRCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateICStockByActQty">
+      <soap12:operation soapAction="http://192.168.2.200/updateICStockByActQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://192.168.2.200/asdf/webservice1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://192.168.2.200/asdf/webservice1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
