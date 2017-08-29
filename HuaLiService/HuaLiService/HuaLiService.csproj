@@ -13,9 +13,11 @@
     <RootNamespace>HuaLiService</RootNamespace>
     <AssemblyName>HuaLiService</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileUpgradeFlags>40</FileUpgradeFlags>
-    <UpgradeBackupLocation>D:\My Documents\Visual Studio 2008\Projects\Qin\Backup\HuaLiService\HuaLiService\</UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

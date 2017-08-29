@@ -89,8 +89,7 @@ namespace DS9208
                     string 发货仓库 = dt.Rows[i]["FDCSPID"].ToString();
                     string 产品名称 = dt.Rows[i]["fitemID"].ToString();
                     string 规格型号 = "";
-                    float fQty = float.Parse(dt.Rows[i]["fQty"].ToString());
-                    float 实发数量 = getFQty(产品名称,fQty);
+                    float 实发数量 = float.Parse(dt.Rows[i]["fQty"].ToString());
                     string 批号 = dt.Rows[i]["fBatchNo"].ToString();
                     string 摘要 = dt.Rows[i]["fNote"].ToString();
 
@@ -161,21 +160,6 @@ namespace DS9208
             {
                 return null;
             }
-        }
-
-        /// <summary>
-        /// 查数据库，得到该产品的最小包装单位数量。
-        /// </summary>
-        /// <param name="productName">产品名称</param>
-        /// <param name="qty">总数量</param>
-        /// <returns>扫描数量</returns>
-        public static float getFQty(string productName , float qty)
-        {
-            //!!!k3 DB Connections
-            string kingdeeConn = "Data Source=192.168.1.223;Initial Catalog=AIS20160702131449;User ID=sa;Password=qaz123";
-            float packageQty = int.Parse(SqlHelper.ExecuteScalar(kingdeeConn,CommandType.Text,"",null).ToString());
-            return qty / packageQty;
-
         }
         
         #endregion
